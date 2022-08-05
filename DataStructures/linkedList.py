@@ -18,8 +18,14 @@ class linkedList:
     def printList(self):
         temp = self.head
         while temp:
-            print(temp.data)
+            print(temp.data, end=" ")
             temp = temp.next
+
+    def push(self, newData):
+
+        temp = Node(newData)
+        temp.next = self.head
+        self.head = temp
 
 
 if __name__ == '__main__':
@@ -32,5 +38,9 @@ if __name__ == '__main__':
 
     list.head.next = second
     second.next = third
+
+    list.printList()
+
+    list.push(4)
 
     list.printList()
