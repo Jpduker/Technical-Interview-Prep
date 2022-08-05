@@ -17,8 +17,9 @@ class linkedList:
 
     def printList(self):
         temp = self.head
+        print("The elements of the linked list are:")
         while temp:
-            print(temp.data, end=" ")
+            print(temp.data, end="\n", )
             temp = temp.next
 
     def push(self, newData):
