@@ -22,17 +22,25 @@ class linkedList:
             print(temp.data, end="\n", )
             temp = temp.next
 
-    def push(self, newData):
+    def push_first(self, newData):
 
         temp = Node(newData)
         temp.next = self.head
         self.head = temp
 
+    def push_middle(self, prev, newData):
+
+        if prev is None:
+            print("Previous Node should be present!")
+            return
+        temp = Node(newData)
+        temp.next = prev.next
+        prev.next = temp
+
 
 if __name__ == '__main__':
 
     list = linkedList()
-
     list.head = Node(1)
     second = Node(2)
     third = Node(3)
@@ -41,7 +49,7 @@ if __name__ == '__main__':
     second.next = third
 
     list.printList()
-
-    list.push(4)
-
+    list.push_first(4)
+    list.printList()
+    list.push_middle(third, 5)
     list.printList()
