@@ -37,6 +37,19 @@ class linkedList:
         temp.next = prev.next
         prev.next = temp
 
+    def append(self, newData):
+
+        temp = Node(newData)
+        if self.head is None:
+            self.head = temp
+            return
+        last_elem = self.head
+
+        while (last_elem.next):
+            last_elem = last_elem.next
+
+        last_elem.next = temp
+
 
 if __name__ == '__main__':
 
@@ -52,4 +65,6 @@ if __name__ == '__main__':
     list.push_first(4)
     list.printList()
     list.push_middle(third, 5)
+    list.printList()
+    list.append(9)
     list.printList()
