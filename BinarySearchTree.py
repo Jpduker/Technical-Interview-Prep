@@ -31,6 +31,13 @@ def preorder(root):
         preorder(root.left)
         preorder(root.right)
 
+def postorder(root):
+    if root:
+        preorder(root.left)
+        preorder(root.right)
+        print(root.val)
+
+
 
 if __name__ == "__main__":
     bst = binarySearchTree(40)
@@ -42,4 +49,6 @@ if __name__ == "__main__":
     inorder(bst)
     print(" ")
     preorder(bst)
+    print(" ")
+    postorder(bst)
     
