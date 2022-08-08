@@ -25,6 +25,13 @@ def inorder(root):
         inorder(root.right)
 
 
+def preorder(root):
+    if root:
+        print(root.val)
+        preorder(root.left)
+        preorder(root.right)
+
+
 if __name__ == "__main__":
     bst = binarySearchTree(40)
     bst = insertTree(bst, 30)
@@ -33,3 +40,6 @@ if __name__ == "__main__":
     bst = insertTree(bst, 60)
 
     inorder(bst)
+    print(" ")
+    preorder(bst)
+    
