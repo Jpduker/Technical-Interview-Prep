@@ -14,3 +14,10 @@ class binarySearchTree():
                 root.right=self.insertTree(root.right,key)
             else:
                 root.left=self.insertTree(root.left,key)
+
+    def inorder(self,root):
+        if root:
+            self.inorder(root.left)
+            print(root.val)
+            self.inorder(root.right)
+            
