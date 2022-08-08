@@ -31,12 +31,20 @@ def preorder(root):
         preorder(root.left)
         preorder(root.right)
 
+
 def postorder(root):
     if root:
         preorder(root.left)
         preorder(root.right)
         print(root.val)
 
+
+def search(root, key):
+    if root is None or root.val == key:
+        return root
+    if root.val < key:
+        return search(root.right, key)
+    return search(root.left, key)
 
 
 if __name__ == "__main__":
@@ -51,4 +59,5 @@ if __name__ == "__main__":
     preorder(bst)
     print(" ")
     postorder(bst)
-    
+    print(" ")
+    print(search(bst, 20))
