@@ -8,28 +8,29 @@ class Node():
         self.val = val
 
 
-def levelOrder(root):
-    result = []
-    queue = deque()
-    queue.append(root)
+class Solution:
+    def levelOrder(self, root):
+        result = []
+        queue = deque()
+        queue.append(root)
 
-    while queue:
-        level = []
-        for i in range(len(level)):
-            node = queue.pop()
-            if node:
-                level.append(node)
-                queue.append(node.left)
-                queue.append(node.right)
-        if level:
-            result.append(level)
-    return result
+        while queue:
+            level = []
+            for i in range(len(queue)):
+                node = queue.popleft()
+                if node:
+                    level.append(node.val)
+                    queue.append(node.left)
+                    queue.append(node.right)
+            if level:
+                result.append(level)
+        return result
 
 
 root1 = Node(3)
 root1.left = Node(9)
 root1.right = Node(20)
-# root1.right.left = Node(15)
-# root1.right.right = Node(7)
-
-print(levelOrder(root1))
+root1.right.left = Node(15)
+root1.right.right = Node(7)
+sln = Solution()
+print(sln.levelOrder(root1))
