@@ -1,3 +1,4 @@
+
 class Node:
     def __init__(self,key,val):
         self.key,self.val = key ,val
@@ -13,10 +14,14 @@ class LRUCache:
 
         #remove node from list
     def remove(self,node):
-        prev,next=node.prev,node.next
+        prev,nxt=node.prev,node.next
+        prev.next,nxt.prev = nxt,prev
 
     def insert(self,node):
-        pass
+        prev,nxt = self.right.prev,self.right
+        prev.next=nxt.prev=node
+        node.next,node.prev=nxt,prev
+         
 
     def put(self,key:int,value:int):
         if key in self.cache:
@@ -26,7 +31,9 @@ class LRUCache:
 
         #check the len(cache) after inserting, if len exceeds capacity then evict lru
         if len(self.cache)>self.cap:
-            lru =self.left.
+            lru =self.left.next
+            self.remove(lru)
+            del self.cache[lru.key]
 
 
 
