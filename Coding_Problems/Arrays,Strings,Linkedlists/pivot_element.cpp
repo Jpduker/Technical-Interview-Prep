@@ -23,4 +23,7 @@ int pivotIndex(vector<int>& nums) {  //[1,7,3,6,5,6]
         }
         return -1;
     }
-int main()
+int main(){
+    vector<int> nums{1,7,3,6,5};
+    cout<<pivotIndex(nums)<<endl;
+}
