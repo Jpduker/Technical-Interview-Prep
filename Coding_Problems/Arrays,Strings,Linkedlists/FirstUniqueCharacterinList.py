@@ -10,3 +10,5 @@ def firstUniqChar(self, s: str) -> int:
             res=s.index(i)
             return res
     return -1
+#Time complexity : O(N) since we go through the string of length N two times.
+#Space complexity : O(1) because English alphabet contains 26 letters.
