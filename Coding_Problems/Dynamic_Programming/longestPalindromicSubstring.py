@@ -22,4 +22,4 @@ def longestPalindrome(s):
             left-=1
             right+=1
     return res
-print(longestPalindrome("abba"))
+print(longestPalindrome("ababa"))
