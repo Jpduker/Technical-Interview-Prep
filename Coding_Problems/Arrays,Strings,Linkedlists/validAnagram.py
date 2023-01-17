@@ -12,11 +12,12 @@ def isAnagram(s, t):
     for j in range(0,len(t)):
         if t[j] not in hashmap:
             return False
-        if t[j] in hashmap and not hashmap[t[j]]>0:
+        if t[j] in hashmap and hashmap[t[j]]<=0:
             return False
         if t[j] in hashmap and hashmap[t[j]]>0:
-            hashmap[t[j]]=1-hashmap.get(t[j],0)
+            hashmap[t[j]]=-1+hashmap.get(t[j],0)
     return True
             
-print(isAnagram())
+print(isAnagram("aacc",
+"ccac"))
         
