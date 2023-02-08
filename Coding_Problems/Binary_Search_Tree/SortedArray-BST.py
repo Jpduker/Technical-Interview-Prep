@@ -17,4 +17,3 @@ class Solution:
             root.right = helper(mid+1,r)
             
             return root
-        return helper(0,len(nums)-1)
