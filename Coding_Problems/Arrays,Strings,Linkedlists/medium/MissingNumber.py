@@ -26,3 +26,9 @@ def missingNumber(nums):
         expected_num = nums[i-1] + 1
         if nums[i] != expected_num:
             return expected_num
+        
+#Most efficient solution using gauss formula to find the expected sum and subtract it from sum(nums)
+def missingNumber(nums):
+        expected_sum = len(nums)*(len(nums)+1)//2
+        actual_sum = sum(nums)
+        return expected_sum - actual_sum
