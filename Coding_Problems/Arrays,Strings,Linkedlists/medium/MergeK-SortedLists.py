@@ -48,5 +48,8 @@ consider we have 4 sorted lists, we can sort them by following
 then merge the 
 
 step1: initially merge two of them using an helper function which is 
-nothing but the code used for merge 2 sorted arrays and make it as single list
+nothing but the code used for merge 2 sorted arrays and make it as single list.
+step2: continue the process for the remaining two lists and make it into a single list
+step3: after these steps we will have totally 2 lists, we can again merge them into a single
+list which is our required list
 """
